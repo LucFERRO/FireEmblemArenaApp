@@ -1,0 +1,35 @@
+@use "variables" as var;
+
+
+.imgContainer {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fighter1,
+.fighter2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .weapContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .weaponType {
+            width: 20px;
+        }
+    }
+}
+
+.fighter2 {
+    .sprite {
+        transform: scaleX(-1)
+    }
+}

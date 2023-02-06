@@ -21,8 +21,8 @@
   },
   "license": "MIT",
   "author": {
-    "name": "Electron React Boilerplate Maintainers",
-    "email": "electronreactboilerplate@gmail.com",
+    "name": "LF",
+    "email": "LF@gmail.com",
     "url": "https://electron-react-boilerplate.js.org"
   },
   "contributors": [
@@ -187,8 +187,8 @@
     "webpack-merge": "^5.8.0"
   },
   "build": {
-    "productName": "ElectronReact",
-    "appId": "org.erb.ElectronReact",
+    "productName": "FireEmblemArena",
+    "appId": "org.erb.FireEmblemArena",
     "asar": true,
     "asarUnpack": "**\\*.{node,dll}",
     "files": [

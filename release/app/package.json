@@ -1,11 +1,11 @@
 {
-  "name": "electron-react-boilerplate",
+  "name": "fire-emblem-arena",
   "version": "4.6.0",
-  "description": "A foundation for scalable desktop apps",
-  "license": "MIT",
+  "description": "Definitely not FireEmblemHeroes",
+  "license": "LF",
   "author": {
-    "name": "Electron React Boilerplate Maintainers",
-    "email": "electronreactboilerplate@gmail.com",
+    "name": "LF",
+    "email": "LF@gmail.com",
     "url": "https://github.com/electron-react-boilerplate"
   },
   "main": "./dist/main/main.js",

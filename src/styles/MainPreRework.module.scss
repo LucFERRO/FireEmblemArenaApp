@@ -1,0 +1,47 @@
+@use "variables" as var;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: var.$primary;
+    padding: 2rem;
+
+    .FightPreview {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 400px;
+    }
+
+    .cheat2 {
+        min-height: 400px;
+    }
+
+    .choose {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .cheat1 {
+            min-width: 600px;
+        }
+
+        .inputs {
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+            align-items: center;
+
+            input {
+                width: 50px;
+                text-align: center;
+            }
+        }
+    }
+}

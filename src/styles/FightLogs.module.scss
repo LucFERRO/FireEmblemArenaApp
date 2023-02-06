@@ -1,0 +1,28 @@
+@use "variables" as var;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    width: 800px;
+}
+
+.logs {
+    display: flex;
+    // align-items: center;
+    justify-content: center;
+    overflow-y: scroll;
+
+    height: 300px;
+    width: 100%;
+
+    .span {
+        width: 800px;
+    }
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+}

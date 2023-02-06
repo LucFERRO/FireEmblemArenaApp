@@ -1,0 +1,13 @@
+@use "variables" as var;
+
+.FightPreview {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 400px;
+
+    .vs {
+        width: 285px;
+    }
+}

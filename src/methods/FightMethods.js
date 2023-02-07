@@ -74,7 +74,7 @@ export const attack = (fighter1, fighter2) => {
             hp_left: attacked.current_hp,
             isHit: hitResult,
             isCrit: critResult,
-            dmg: dmgResult,
+            dmg: hitResult ? dmgResult : 'Miss',
             endOfFight: isFightOver
         }
         turnAttacks.push(result)

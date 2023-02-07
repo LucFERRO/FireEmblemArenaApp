@@ -45,15 +45,15 @@ export default function FightLogs({ fighter1, fighter2, setDmgTakenFighter1, set
     }
 
     const displayFight = () => {
-        // console.log('display attacks', attacks.flat(1))
+        console.log('display attacks', attacks.flat(1))
         // console.log(logs)
         attacks.flat(1).forEach((attack, i) => setTimeout(() => {
             if (attack.isFighter1sTurn) {
-                setDmgTakenFighter1('')
+                setDmgTakenFighter1(null)
                 setDmgTakenFighter2(attack.dmg)
             } else {
                 setDmgTakenFighter1(attack.dmg)
-                setDmgTakenFighter2('')
+                setDmgTakenFighter2(null)
             }
             setDisplayedLogs(logs.flat(1).slice(0, i + 1))
         }, i * 1000))

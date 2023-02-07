@@ -40,8 +40,8 @@ export default function Main() {
     useEffect(() => {
         // console.log('NEXT MATCH')
         // console.log('Fighters', fighter1, fighter2)
-        setDmgTakenFighter1('')
-        setDmgTakenFighter2('')
+        setDmgTakenFighter1(null)
+        setDmgTakenFighter2(null)
 
         if (fighter1 && !fightStart) setFighter1({ ...fighter1, current_hp: fighter1.hp })
         if (fighter2 && !fightStart) setFighter2({ ...fighter2, current_hp: fighter2.hp })

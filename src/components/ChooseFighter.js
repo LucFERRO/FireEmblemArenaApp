@@ -3,10 +3,6 @@ import styles from '../styles/ChooseFighter.module.scss'
 
 export default function ChooseFighter({ fighterList, fighterPosition, changeFighter }) {
 
-    useEffect(() => {
-        console.log(fighterList)
-    }, [])
-
     return (
         <div className={styles.container}>
             <h1>{fighterPosition}</h1>

@@ -6,7 +6,7 @@ import FighterPreview from './FighterPreview'
 import { useEffect, useState } from 'react'
 import { apiService } from 'services/APIService'
 
-import { Fighter } from 'classes/Fighter'
+import { Fighter } from 'classes/NotImplemented'
 import ChooseFighter from './ChooseFighter'
 
 export default function Main() {

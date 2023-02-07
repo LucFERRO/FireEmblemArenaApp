@@ -1,4 +1,4 @@
-import { Fighter } from "classes/Fighter"
+import { Fighter } from "classes/NotImplemented"
 
 export const dmgCalc = (atk1, def2, isCrit) => {
     let dmg = atk1 - def2 > 0 ? atk1 - def2 : 0

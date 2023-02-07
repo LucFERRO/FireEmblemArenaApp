@@ -14,14 +14,7 @@ export default function FighterInfo({ fighter1, fighter2, leftOrRight, dmgTakenF
     }, [dmgTakenFighter])
 
     useEffect(() => {
-        // gsap.fromTo(dmgRef.current, {
-        //     scale: 1,
-        // },
-        //     {
-        //         scale: 1.5,
-        //         duration: 1,
-        //         yoyo: true
-        //     })
+
         gsap.timeline()
             .fromTo(dmgRef.current, {
                 scale: 1,

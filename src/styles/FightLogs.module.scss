@@ -6,25 +6,40 @@
     // justify-content: center;
     align-items: center;
     width: 800px;
-}
 
-.logs {
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
-    overflow-y: scroll;
-    height: 300px;
-    width: 80%;
+    .fightOrLogs {
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
+        overflow-y: scroll;
+        height: 400px;
+        width: 80%;
+        position: relative;
 
-    &::-webkit-scrollbar {
-        display: none;
+        .fight {
+            z-index: 5;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            border: 2px solid red;
+            background-color: blue;
+        }
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        .logsContainer {
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: center;
+            align-items: center;
+        }
+
     }
 
-    .logsContainer {
-        display: flex;
-        flex-direction: column-reverse;
-        justify-content: center;
-        align-items: center;
+    .hiddenButton {
+        visibility: hidden;
     }
-
 }

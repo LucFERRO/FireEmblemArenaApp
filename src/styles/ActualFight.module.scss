@@ -1,0 +1,38 @@
+@use "variables" as var;
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+
+    .imgContainer {
+        width: 250px;
+        height: 250px;
+        object-fit: contain;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        img {
+            position: absolute
+        }
+
+        &:nth-child(2) img{
+            transform: scaleX(-1);
+        }
+
+        .dmgNumber {
+            position: absolute;
+            color: red;
+            font-size: 3rem;
+            font-weight: 600;
+            top: 30;
+            z-index: 10;
+            // animation: dmgNumberFade 0.75s linear infinite;
+        }
+
+    }
+}

@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
 import styles from '../styles/FightLogs.module.scss'
 import * as methods from '../methods/FightMethods'
+import ActualFight from './ActualFight'
 
-export default function FightLogs({ fighter1, fighter2, setDmgTakenFighter1, setDmgTakenFighter2, setFightStart }) {
+export default function FightLogs({ fighter1, fighter2, dmgTakenFighter1, dmgTakenFighter2, setDmgTakenFighter1, setDmgTakenFighter2, setFightStart }) {
 
     const [goNext, setGoNext] = useState(false)
     const [first, setFirst] = useState(fighter1)
@@ -12,6 +13,8 @@ export default function FightLogs({ fighter1, fighter2, setDmgTakenFighter1, set
     const [logs, setLogs] = useState([])
 
     const [displayedLogs, setDisplayedLogs] = useState([])
+
+    const [visibleFight, setVisibleFight] = useState(false)
 
     useEffect(() => {
         Fight()
@@ -38,15 +41,13 @@ export default function FightLogs({ fighter1, fighter2, setDmgTakenFighter1, set
         if (fighter1.current_hp * fighter2.current_hp != 0) {
             let nbOfAttacksThisTurn = nextTurn(fighter1, fighter2)
             return Fight()
-            // return setTimeout(() => Fight(), nbOfAttacksThisTurn*1000)
         }
         displayFight()
 
     }
 
     const displayFight = () => {
-        console.log('display attacks', attacks.flat(1))
-        // console.log(logs)
+        console.log(attacks)
         attacks.flat(1).forEach((attack, i) => setTimeout(() => {
             if (attack.isFighter1sTurn) {
                 setDmgTakenFighter1(null)
@@ -57,27 +58,15 @@ export default function FightLogs({ fighter1, fighter2, setDmgTakenFighter1, set
             }
             setDisplayedLogs(logs.flat(1).slice(0, i + 1))
         }, i * 1000))
-
-        // setDisplayedLogs(attacks.flat(1))
-        // console.log('display fight',logs.flat(1))
-        // let res = []
-        // logs.forEach((log, i) => {
-        //     setTimeout(() => {
-        //     console.log('Turn', i + 1)
-        //     log.forEach((attack, y) => {
-        //         setTimeout(() => {
-        //             console.log('Turn', i + 1, 'attack', y, attack)
-        //         }, (i) * (y) * 500)
-        //     })
-        //     }, (i)*log.length*500)
-        // })
-        setGoNext(true)
+        setTimeout(() => {
+            setGoNext(true)
+        }, attacks.flat(1).length * 1000)
     }
 
     return (
         <div className={styles.container}>
-            <h1>FightLogs</h1>
-            <div className={styles.logs}>
+            <h1 onClick={() => setVisibleFight(!visibleFight)}>FightLogs</h1>
+            <div className={styles.fightOrLogs}>
                 <div className={styles.logsContainer}>
 
                     {/* {logs?.map((log, i) => {
@@ -89,8 +78,11 @@ export default function FightLogs({ fighter1, fighter2, setDmgTakenFighter1, set
                         return <p key={i}>{attack}</p>
                     })}
                 </div>
+                {visibleFight && <div className={styles.fight}>
+                    <ActualFight fighter1={fighter1} fighter2={fighter2} attacks={attacks.flat(1)}/>
+                </div>}
             </div>
-            {goNext && <button onClick={() => setFightStart(false)}>Go next</button>}
+            <button className={!goNext ? styles.hiddenButton : ''} onClick={() => setFightStart(false)}>Next</button>
         </div>
     )
 }

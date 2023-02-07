@@ -1,7 +1,7 @@
 import styles from '../styles/FighterInfo.module.scss'
 import * as methods from '../methods/FightMethods'
 
-export default function FighterInfo({ fighter1, fighter2, leftOrRight }) {
+export default function FighterInfo({ fighter1, fighter2, leftOrRight, dmgTakenFighter }) {
 
     if (!fighter1) return
 
@@ -9,6 +9,7 @@ export default function FighterInfo({ fighter1, fighter2, leftOrRight }) {
         <div>
             <div className={leftOrRight ? styles.fighter1 : styles.fighter2}>
                 <div className={styles.imgContainer}>
+                    <p className={styles.dmgNumber}>{dmgTakenFighter}</p>
                     <img className={styles.sprite} src={require(`../../assets/images/${fighter1.sprite}.png`)} />
                 </div>
                 <div>{fighter1.name}</div>

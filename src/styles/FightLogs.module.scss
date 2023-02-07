@@ -9,20 +9,22 @@
 }
 
 .logs {
-    display: flex;
+    // display: flex;
     // align-items: center;
-    justify-content: center;
+    // justify-content: center;
     overflow-y: scroll;
-
     height: 300px;
-    width: 100%;
-
-    .span {
-        width: 800px;
-    }
+    width: 80%;
 
     &::-webkit-scrollbar {
         display: none;
+    }
+
+    .logsContainer {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
     }
 
 }

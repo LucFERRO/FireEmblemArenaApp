@@ -16,6 +16,9 @@ export default function Main() {
     const [fighter1, setFighter1] = useState()
     const [fighter2, setFighter2] = useState()
 
+    const [dmgTakenFighter1, setDmgTakenFighter1] = useState()
+    const [dmgTakenFighter2, setDmgTakenFighter2] = useState()
+
     const [fightStart, setFightStart] = useState(false)
     const [startNextMatch, setStartNextMatch] = useState(true)
 
@@ -27,6 +30,7 @@ export default function Main() {
     }
 
     const nextMatch = () => {
+        if(!fighter1 || !fighter2) return
         setFightStart(true)
         setTimeout(() => setStartNextMatch(!startNextMatch), 1000)
     }
@@ -36,8 +40,8 @@ export default function Main() {
     }, [])
 
     useEffect(() => {
-        console.log('NEXT MATCH')
-        console.log('Fighters', fighter1, fighter2)
+        // console.log('NEXT MATCH')
+        // console.log('Fighters', fighter1, fighter2)
         if (fighter1 && !fightStart) setFighter1({ ...fighter1, current_hp: fighter1.hp })
         if (fighter2 && !fightStart) setFighter2({ ...fighter2, current_hp: fighter2.hp })
     }, [fightStart])
@@ -67,13 +71,13 @@ export default function Main() {
     return (
         <div className={styles.container}>
             <div className={styles.fightPreviewContainer}>
-                <FighterPreview fighterList={fighterList} fighterPosition={'Fighter1'} changeFighter={changeFighter1} fighter1={fighter1} fighter2={fighter2} leftOrRight={true} />
+                <FighterPreview dmgTakenFighter={dmgTakenFighter1} fighterList={fighterList} fighterPosition={'Fighter1'} changeFighter={changeFighter1} fighter1={fighter1} fighter2={fighter2} leftOrRight={true} />
                 <div onClick={() => nextMatch()}>
                     <img className={styles.vs} src={require(`../../assets/images/vs.png`)} />
                 </div>
-                <FighterPreview fighterList={fighterList} fighterPosition={'Fighter2'} changeFighter={changeFighter2} fighter1={fighter2} fighter2={fighter1} leftOrRight={false} />
+                <FighterPreview dmgTakenFighter={dmgTakenFighter2} fighterList={fighterList} fighterPosition={'Fighter2'} changeFighter={changeFighter2} fighter1={fighter2} fighter2={fighter1} leftOrRight={false} />
             </div>
-            {fightStart ? <FightLogs fighter1={fighter1} fighter2={fighter2} setFightStart={setFightStart} /> : <div className={styles.cheatLogs}></div>}
+            {fightStart ? <FightLogs fighter1={fighter1} fighter2={fighter2} setDmgTakenFighter1={setDmgTakenFighter1} setDmgTakenFighter2={setDmgTakenFighter2} setFightStart={setFightStart} /> : <div className={styles.cheatLogs}></div>}
         </div>
     )
 }

@@ -51,8 +51,8 @@ export const attack = (fighter1, fighter2) => {
             attacker = fighter1
             attacked = fighter2
         }
-        console.log('next turn')
-        console.log('attacked hp pre hit', attacked.current_hp)
+        // console.log('next turn')
+        // console.log('attacked hp pre hit', attacked.current_hp)
 
         let hitResult = isHit(attacker.hit, attacked.avo)
         let critResult = isCrit(attacker.crit)
@@ -65,7 +65,7 @@ export const attack = (fighter1, fighter2) => {
             isFightOver = true
             endOfFight = true
         }
-        console.log('attacked hp post hit', attacked.current_hp)
+        // console.log('attacked hp post hit', attacked.current_hp)
 
         let result = {
             isFighter1sTurn: isFighter1sTurn,
@@ -77,10 +77,9 @@ export const attack = (fighter1, fighter2) => {
             dmg: dmgResult,
             endOfFight: isFightOver
         }
-        if (!isFighter1sTurn) console.log(result)
         turnAttacks.push(result)
     }
-    console.log('attack in atk function', turnAttacks)
+    // console.log('attack in atk function', turnAttacks)
     return turnAttacks
 }
 
@@ -105,8 +104,8 @@ export const turn = (fighter1, fighter2) => {
         if (attack.endOfFight) fightOver = true
 
     })
-    console.log('attacks', attacks)
-    console.log('actions', actions)
+    // console.log('attacks', attacks)
+    // console.log('actions', actions)
     return { attacks, actions, fightOver }
 
 }

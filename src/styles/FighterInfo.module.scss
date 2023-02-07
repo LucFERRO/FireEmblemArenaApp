@@ -1,5 +1,14 @@
 @use "variables" as var;
 
+@keyframes dmgNumberFade {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
 .imgContainer {
     width: 250px;
     height: 250px;
@@ -8,6 +17,17 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+
+    .dmgNumber {
+        position: absolute;
+        color: red;
+        font-size: 3rem;
+        font-weight: 600;
+        top: 30;
+        z-index: 2;
+        animation: dmgNumberFade 1s linear infinite;
+    }
 }
 
 .fighter1,
@@ -21,6 +41,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
         .weaponType {
             width: 20px;
         }

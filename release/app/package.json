@@ -1,12 +1,12 @@
 {
   "name": "fire-emblem-arena",
-  "version": "4.6.0",
+  "version": "1.0.0",
   "description": "Definitely not FireEmblemHeroes",
   "license": "LF",
   "author": {
     "name": "LF",
     "email": "LF@gmail.com",
-    "url": "https://github.com/electron-react-boilerplate"
+    "url": "https://github.com/LucFERRO/FireEmblemArenaApp"
   },
   "main": "./dist/main/main.js",
   "scripts": {
